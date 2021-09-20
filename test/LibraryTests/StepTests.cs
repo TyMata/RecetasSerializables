@@ -39,16 +39,16 @@ namespace LibraryTests
         {
             string productDescription = "Test Product";
             double unitCost = 9.99;
-            string productJson = $@"{{""Description"":""{productDescription}"",""UnitCost"":{unitCost}}}";
+            string productJson = $@"{{""Description"":""{productDescription}"",""UnitCost"":9.99}}";
 
             string equipmentDescription = "Test Equipment";
             double hourlyCost = 99.99;
-            string equipmentJson = $@"{{""Description"":""{equipmentDescription}"",""HourlyCost"":{hourlyCost}}}";
+            string equipmentJson = $@"{{""Description"":""{equipmentDescription}"",""HourlyCost"":99.99}}";
 
             double quantity = 999.99;
             int time = 10;
 
-            string json = $@"{{""Input"":{productJson},""Quantity"":{quantity},""Time"":{time},""Equipment"":{equipmentJson}}}";
+            string json = $@"{{""Input"":{productJson},""Quantity"":999.99,""Time"":{time},""Equipment"":{equipmentJson}}}";
 
             Step step = new Step(json);
 
