@@ -19,7 +19,6 @@ namespace Recipies
         [JsonInclude]
         public ArrayList Steps { get; private set; } = new ArrayList();
 
-
         public void AddStep(Step step)
         {
             this.Steps.Add(step);
@@ -28,6 +27,16 @@ namespace Recipies
         public void RemoveStep(Step step)
         {
             this.Steps.Remove(step);
+        }
+        public string ConvertToJson()
+        {
+            return JsonSerializer.Serialize(this);
+        }
+        public void LoadFromJson(string json)
+        {
+            Recipe r = JsonSerializer.Deserialize<Recipe>(json);
+            this.FinalProduct = r.FinalProduct;
+            this.Steps = r.Steps;
         }
     }
 }
